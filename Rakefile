@@ -22,7 +22,7 @@ client = ENV['CLIENT']
 # sudo rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-5.noarch.rpm
 commands = <<BOOTSTRAP
 rm /home/puppet -rf && \
-rpm -qa | grep puppet | xargs rpm -e && \
+rpm -qa | grep puppet | xargs rpm -e 2>/dev/null; \
 rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm && \
 yum install -y puppet git && \
 cd /home/ && git clone #{REPO} puppet && \
