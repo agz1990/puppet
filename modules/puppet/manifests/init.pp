@@ -10,19 +10,19 @@ class puppet {
   
   
   file { '/root/.ssh/id_rsa':
-	source => 'puppet:///modules/puppet/files/sshkey/id_rsa',
+	source => 'puppet:///modules/puppet/sshkey/id_rsa',
 	owner  => 'root',
 	mode   => '0600',
   }
   
   file { '/root/.ssh/authorized_keys':
-	source => 'puppet:///modules/puppet/files/sshkey/authorized_keys',
+	source => 'puppet:///modules/puppet/sshkey/authorized_keys',
 	owner  => 'root',
 	mode   => '0600',
   }
   
   file { '/root/.ssh/id_rsa.pub':
-	source => 'puppet:///modules/puppet/files/sshkey/id_rsa.pub',
+	source => 'puppet:///modules/puppet/sshkey/id_rsa.pub',
 	owner  => 'root',
 	mode   => '0644',
   }
