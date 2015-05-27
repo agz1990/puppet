@@ -1,4 +1,4 @@
-SSH = 'ssh -A '
+SSH = 'ssh -t -A '
 REPO = 'https://github.com/agz1990/puppet.git' 
 
 desc "Run Puppet on ENV['CLIENT']"

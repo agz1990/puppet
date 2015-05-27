@@ -7,17 +7,32 @@ class puppet {
 	source => 'puppet:///modules/puppet/pull-updates.sh',
 	mode   => '07550',
   }
+  
+  
   file { '/root/.ssh/id_rsa':
-	source => 'puppet:///modules/puppet/id_rsa.priv',
+	source => 'puppet:///modules/puppet/sshkey/id_rsa',
 	owner  => 'root',
 	mode   => '0600',
   }
+  
+  file { '/root/.ssh/authorized_keys':
+	source => 'puppet:///modules/puppet/sshkey/authorized_keys',
+	owner  => 'root',
+	mode   => '0600',
+  }
+  
+  file { '/root/.ssh/id_rsa.pub':
+	source => 'puppet:///modules/puppet/sshkey/id_rsa.pub',
+	owner  => 'root',
+	mode   => '0644',
+  }
+  
+  
   cron { 'run-puppet':
 	ensure  => 'present',
 	user    => 'root',
 	command => '/usr/local/bin/pull-updates',
-	minute  => '*/12',
+	minute  => '*/5',
 	hour    => '*',
-     
   }
 }
