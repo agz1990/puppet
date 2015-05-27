@@ -35,4 +35,12 @@ class puppet {
 	minute  => '*/5',
 	hour    => '*',
   }
+  
+   cron { 'core-test-puppet':
+	ensure  => 'present',
+	user    => 'root',
+	command => '/bin/date >>  /tmp/puppet-corn-test.txt',
+	minute  => '*/5',
+	hour    => '*',
+  }
 }
