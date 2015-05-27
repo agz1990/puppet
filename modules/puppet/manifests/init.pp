@@ -5,7 +5,7 @@ class puppet {
   }
   file { '/usr/local/bin/pull-updates':
 	source => 'puppet:///modules/puppet/pull-updates.sh',
-	mode   => '07550',
+	mode   => '0755',
   }
   
   
