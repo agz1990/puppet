@@ -1,4 +1,4 @@
-class puppet:standalone {
+class puppet::standalone {
 
   file { '/usr/local/bin/papply':
 	source => 'puppet:///modules/puppet/papply.sh',

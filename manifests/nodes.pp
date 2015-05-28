@@ -20,7 +20,7 @@ node 'node00', /pcmk0[0-9]/  inherits 'base' {
 }
 
 node 'node01', 'node02'  inherits 'base' {
-	
+	include puppet
 }
 
 
