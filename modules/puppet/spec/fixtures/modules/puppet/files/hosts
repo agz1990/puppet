@@ -1,0 +1,14 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.1.222   s222
+192.168.1.223   s223
+
+192.168.1.181	node01
+192.168.1.182	node02
+192.168.1.183	node03
+192.168.1.184	node04
+
+192.168.1.171 pcmk01
+192.168.1.172 pcmk02
+192.168.1.180 node00
+# test puppet append_if_no_such_line.
