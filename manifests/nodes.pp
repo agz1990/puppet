@@ -28,7 +28,7 @@ node 'node01', 'node02'  inherits 'base' {
 node 's222' inherits 'base' {
   # include cookbook::stages
   
-	include puppet::server
+	include puppet::master
 	# include haproxy
 	# include httpd
 	# httpd::snippet { 'site-specific.conf': }
