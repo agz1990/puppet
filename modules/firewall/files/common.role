@@ -1,0 +1,33 @@
+# Allow all traffic on loopback interface
+iptables -I INPUT 1 -i lo -j ACCEPT
+iptables -I OUTPUT 1 -o lo -j ACCEPT
+
+# Allow established and related connections
+iptables -I INPUT 2 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -I OUTPUT 2 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow SSH and ping
+iptables -A INPUT -p tcp -m tcp --dport ${SSH} -j ACCEPT
+iptables -A INPUT -p ICMP --icmp-type echo-request -j
+
+
+ACCEPT
+# Allow common outbound ports
+iptables -A OUTPUT -p tcp --dport ${SMTP} -j ACCEPT
+iptables -A OUTPUT -p udp --dport ${NTP} -j ACCEPT
+iptables -A OUTPUT -p tcp --dport ${NTP} -j ACCEPT
+iptables -A OUTPUT -p udp --dport ${DNS} -j ACCEPT
+iptables -A OUTPUT -p tcp --dport ${WEB} -j ACCEPT
+iptables -A OUTPUT -p tcp --dport ${WEB_SSL} -j ACCEPT
+iptables -A OUTPUT -p tcp --dport ${MYSQL} -j ACCEPT
+
+# Drop some commonly probed ports
+iptables -A INPUT -p tcp --dport 23 -j DROP # telnet
+iptables -A INPUT -p tcp --dport 135 -j DROP # epmap
+iptables -A INPUT -p tcp --dport 139 -j DROP # netbios
+iptables -A INPUT -p tcp --dport 445 -j DROP # Microsoft DS
+iptables -A INPUT -p udp --dport 1433 -j DROP # SQL server
+iptables -A INPUT -p tcp --dport 1433 -j DROP # SQL server
+iptables -A INPUT -p udp --dport 1434 -j DROP # SQL server
+iptables -A INPUT -p tcp --dport 1434 -j DROP # SQL server
+iptables -A INPUT -p tcp --dport 2967 -j DROP # SSC-agent
