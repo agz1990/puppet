@@ -1,5 +1,5 @@
 # Manage puppetmaster
-class puppet::server {
+class puppet::master {
 	package { 'puppet-server':
 		ensure => installed,
 	}
