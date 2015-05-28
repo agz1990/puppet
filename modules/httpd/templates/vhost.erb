@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+	ServerName <%= @vhost_domain %>
+	DocumentRoot <%= @vhost_root %>
+	ErrorLog /var/log/httpd/<%= @vhost_domain %>-error_log
+	CustomLog /var/log/httpd/<%= @vhost_domain %>-access_logcommon
+	<Directory <%= @vhost_root %>>
+		Allow from all
+		Options +Includes +Indexes +FollowSymLinks
+		AllowOverride all
+	</Directory>
+</VirtualHost>
