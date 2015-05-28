@@ -1,5 +1,5 @@
 class puppet::standalone {
-
+  include puppet
   file { '/usr/local/bin/papply':
 	source => 'puppet:///modules/puppet/papply.sh',
 	mode   => '0755',
@@ -9,7 +9,7 @@ class puppet::standalone {
 	mode   => '0755',
   }
   
-  
+
   cron { 'run-puppet':
 	ensure  => 'present',
 	user    => 'root',

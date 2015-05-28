@@ -1,11 +1,5 @@
 class puppet {
 
-  file { '/etc/puppet/puppet.conf':
-	source => 'puppet:///modules/puppet/puppet.conf',
-	mode   => '0755',
-  }
-  
-
   file { '/root/.ssh/id_rsa':
 	source => 'puppet:///modules/puppet/id_rsa',
 	owner  => 'root',

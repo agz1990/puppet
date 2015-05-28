@@ -15,12 +15,11 @@ node 'base' {
 
 
 node 'node00', /pcmk0[0-9]/  inherits 'base' {
-	include puppet
 	include puppet::standalone
 }
 
 node 'node01', 'node02'  inherits 'base' {
-	include puppet
+	include puppet::agent
 }
 
 
@@ -34,7 +33,7 @@ node 's222' inherits 'base' {
 	# httpd::snippet { 'site-specific.conf': }
 	# httpd::vhost { 'cat-pictures.com': }
 	
-	# include mysql::server
+	 include mysql::server
 	# mysql::db { 'myapp':
 		# user => 'myapp_user',
 		# password => 'xyzzy',
