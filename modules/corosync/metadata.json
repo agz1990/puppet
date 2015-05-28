@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "license": "Apache License, Version 2.0",
+  "name": "desalvo-corosync",
+  "dependencies": [
+
+  ],
+  "source": "https://github.com/desalvo/puppet-corosync",
+  "types": [
+
+  ],
+  "author": "desalvo",
+  "summary": "Puppet module for corosync management",
+  "description": "A puppet module for managing corosync configuration",
+  "project_page": "https://github.com/desalvo/puppet-corosync",
+  "checksums": {
+    "templates/corosync_pacemaker.erb": "8c23e580601c2cbbd52f3262e69272bf",
+    "Modulefile": "6a5b1a59ab3e6275df369836a4a79185",
+    "tests/init.pp": "9301b1701805d116a74e5274eab6ec74",
+    "manifests/init.pp": "ca077aaa4c22c1502a70854da8a74d19",
+    "templates/corosync_conf.erb": "b510398519e66643cf8cf5b6442029bc",
+    "README.md": "b9b82b98a46f3dff73e53084015aa2f4",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "manifests/params.pp": "11006fb008506996825dcfbbdb5cfd1e"
+  }
+}
